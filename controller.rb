@@ -3,6 +3,6 @@ class ApplicationController < Sinatra::Base
     erb :index, :layout => :layout, locals: {posts: Post.all}
   end
   get '/post/:id' do |id|
-    erb :show, :layout => :layout, locals: {post: Post.all[id.to_i], comments: Comment.select(id) }
+    erb :show, :layout => :layout, locals: {post: Post.find(id.to_i), comments: Comment.select(id.to_i) }
   end
 end

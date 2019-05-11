@@ -1,36 +1,58 @@
 [
   {
     "post_id": 0,
-    "content": [
-      "super",
-      "cool!",
-      "bien écrit",
-      "first!",
-      "why is everyone speaking French here?"
-    ]
+    "content": "super"
+  },
+  {
+    "post_id": 0,
+    "content": "cool!"
+  },
+  {
+    "post_id": 0,
+    "content": "bien écrit"
+  },
+  {
+    "post_id": 0,
+    "content": "first"
+  },
+  {
+    "post_id": 0,
+    "content": "why is everyone speaking French here?"
   },
   {
     "post_id": 1,
-    "content": [
-      "J'ai préféré l'autre article",
-      "je n'ai pas vraiment compris le deuxième paragraphe",
-      "une suite?"
-    ]
+    "content": "J'ai préféré l'autre article"
+  },
+  {
+    "post_id": 1,
+    "content": "je n'ai pas vraiment compris le deuxième paragraphe"
+  },
+  {
+    "post_id": 1,
+    "content": "une suite?"
   },
   {
     "post_id": 2,
-    "content": ["A revoir", "Découvrez ma page Facebook! @Kamsoerzi"]
+    "content": "A revoir"
+  },
+  {
+    "post_id": 2,
+    "content": "Découvrez ma page Facebook! @Kamsoerzi"
   },
   {
     "post_id": 3,
-    "content": ["Nul"]
+    "content": "Nul"
   },
   {
     "post_id": 4,
-    "content": [
-      "J'ai adoré mais j'aurais préféré qu'elle finisse avec John",
-      "good article",
-      "Ajouté dans mes favoris!"
-    ]
+    "content": "J'ai adoré mais j'aurais préféré qu'elle finisse avec John"
+  },
+  {
+    "post_id": 4,
+    "content": "good article"
+  },
+  {
+    "post_id": 4,
+    "content": "Ajouté dans mes favoris!"
   }
 ]

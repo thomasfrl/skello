@@ -9,3 +9,5 @@
 	gem 'json' 
 
 	gem 'sinatra'
+
+	gem 'shotgun'

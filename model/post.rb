@@ -41,4 +41,12 @@ class Post
     File.write('db/post.json', json.to_json)
     return self
   end
+
+  def delete
+    id = self.id
+    json = JSON.parse(File.read('db/post.json'))
+    new_json = json.reject{|post| post["id"] == id}
+    File.write('db/post.json', new_json.to_json)
+  end
+
 end

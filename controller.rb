@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/comments/:post_id' do |post_id|
-    Comment.new(post_id.to_i, params["content"]).save
+    Comment.new(post_id: post_id.to_i, content: params["content"]).save
     redirect "/posts/#{post_id}"
   end
 

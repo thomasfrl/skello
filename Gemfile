@@ -13,3 +13,6 @@
 	gem 'shotgun'
 
 	gem 'launchy'
+
+	gem 'rack-test'
+	

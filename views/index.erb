@@ -1,1 +1,21 @@
-<h1>Index</h1>
+<%= erb :carousel %>
+<div class="container" id="index">
+  <h1 class="text-center">Posts</h1>
+  <br>    
+  <div class="d-flex flex-wrap justify-content-center">
+    <% posts.each do |post| %>
+			<div class="card text-white bg-secondary m-3" style="max-width: 20rem;">
+				<% if post.photo.class == String %>
+					<img class="card-img-top" src="<%= post.photo%>" alt="post image"> 
+				<% else %>
+					<img class="card-img-top" src="https://unsplash.it/600?image=1" alt="post image"> 
+				<% end %>
+				<div class="card-header"><h4 class="card-title"><%=post.title%></h4></div>
+				<div class="card-body">						
+						<p class="card-text"><%= post.content[0..200] + " [...]" %></p>
+						<a href="posts/<%=post.id%>" class="stretched-link">More information</a>
+				</div>
+			</div>
+		<% end %>
+  </div>
+</div>

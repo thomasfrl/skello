@@ -23,7 +23,7 @@ class Comment
     comments = []
     hash.each do |line|
       if line["post_id"] == post_id
-        comment = self.new(line["content"], line["post_id"])
+        comment = self.new(line["post_id"],line["content"])
         comments << comment
       end
     end

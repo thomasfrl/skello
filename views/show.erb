@@ -1,1 +1,40 @@
-<h1>Show</h1>
+<div class="container my-5">
+    <header class="d-flex">
+        <%if post.photo.class == String%>
+			<img class="col-8" src="<%= post.photo%>" alt="post image"> 
+        <%else%>
+			<img class="col-8" src="https://unsplash.it/600?image=1" alt="post image"> 
+        <%end%>      
+        <div class="col-4">
+            <h2><%= post.title %></h2>
+            <h5 class="mb-5">Rating : <%= post.rating %>/5</h5>
+			<h4>About the post</h4>
+        	<p><%= post.content %></p>
+        </div>
+    </header>
+    <hr>
+    <article>
+		<form action='/comments/new/' method='POST'>
+		Balance ton blase : <input type='text' name='gossip_author'/><br/>
+		Balance ton potin : <input type='text' name='gossip_content'/><br/>
+		<input type='submit'/>
+		</form>
+
+		<h2> Comment list</h2>
+		<%comments.each do |comment|%>
+			<div class="card p-1 col-12 m-2">
+				<blockquote class="blockquote mb-0 card-body">
+					<p><%=comment.content%></p>
+					<footer class="blockquote-footer">Someone smart enough</footer>
+				</blockquote>
+			</div>
+		<% end %>
+
+        <div class="col-8">
+        	
+		</div>
+		<div class='col-4'>
+		</div>
+    </article>
+</div>
+

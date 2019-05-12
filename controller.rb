@@ -8,7 +8,11 @@ class ApplicationController < Sinatra::Base
     erb :show, :layout => :layout, locals: {post: Post.find(id.to_i), comments: Comment.select(id.to_i) }
   end
   post '/posts/' do 
-    erb :show, :layout => :layout, locals: {post: Post.find(id.to_i), comments: Comment.select(id.to_i) }
+    redirect "/posts/#{id}"
+  end
+  post '/comments/:post_id' do |post_id|
+    Comment.new(post_id.to_i, params["content"]).save
+    redirect "/posts/#{post_id}"
   end
 
 end

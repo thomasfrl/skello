@@ -29,4 +29,10 @@ class Comment
     end
     return comments
   end
+
+  def save
+    json = JSON.parse(File.read('db/comment.json'))
+    json << {"post_id": self.post_id, "content": self.content
+    File.write('db/comment.json', json.to_json)
+  end
 end

@@ -14,12 +14,12 @@
     </header>
     <hr>
     <article>
-		<form action='/comments/new/' method='POST'>
-		Balance ton blase : <input type='text' name='gossip_author'/><br/>
-		Balance ton potin : <input type='text' name='gossip_content'/><br/>
-		<input type='submit'/>
+		<form action='/comments/<%=post.id%>' method='POST'>
+			New comment : 
+			<input type='textarea' name='content' class="form-control mb-1"/>
+      		<input type='submit' class="btn btn-primary"/>
 		</form>
-
+		<br/>
 		<h2> Comment list</h2>
 		<%comments.each do |comment|%>
 			<div class="card p-1 col-12 m-2">

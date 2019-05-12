@@ -11,3 +11,5 @@
 	gem 'sinatra'
 
 	gem 'shotgun'
+
+	gem 'launchy'

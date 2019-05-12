@@ -1,12 +1,12 @@
 class Post
   attr_accessor :title, :content, :rating, :photo, :id
 
-  def initialize(id, title, content, rating, photo)
-    self.title = title
-    self.content = content
-    self.rating = rating
-    self.photo = photo
-    self.id = id
+  def initialize(**args)
+    self.title = args[:title]
+    self.content = args[:content]
+    self.rating = args[:rating]
+    self.photo = args[:photo]
+    self.id = args[:id]
   end
   
   def self.find(id)
@@ -14,7 +14,7 @@ class Post
     hash = JSON.parse(file)
     hash.each do |line|
       if  line["id"] == id
-        return self.new(line["id"], line["title"], line["content"], line["rating"], line["photo"])
+        return self.new(id: line["id"], title: line["title"], content: line["content"], rating: line["rating"], line: line["photo"])
       end
     end
   end
@@ -24,7 +24,7 @@ class Post
     hash = JSON.parse(file)
     posts = []
     hash.each do |line|
-      post = self.new(line["id"], line["title"], line["content"], line["rating"], line["photo"])
+      post = self.new(id: line["id"], title: line["title"], content: line["content"], rating: line["rating"], line: line["photo"])
       posts << post
     end
     return posts
@@ -32,5 +32,13 @@ class Post
 
   def comments
     Comment.select(self.id)
+  end
+
+  def save
+    self.id = Post.all.last.id + 1
+    json = JSON.parse(File.read('db/post.json'))
+    json << {"id": self.id, "content": self.content, "rating": self.rating, "photo": self.photo, "title": self.title}
+    File.write('db/post.json', json.to_json)
+    return self
   end
 end

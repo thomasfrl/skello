@@ -13,3 +13,8 @@ http://localhost:9393/
 Or you can check our on production app :
 
 https://skello-project.herokuapp.com/
+
+You can check the tests (model and controller) : 
+
+`rspec`
+

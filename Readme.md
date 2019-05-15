@@ -10,9 +10,9 @@ To test it localy :
 
 http://localhost:9393/
 
-Or you can check our on production app :
+Or you can check our on production app (whitout permanent active storage service):
 
-https://skello-project.herokuapp.com/
+https://project-contrat.herokuapp.com/
 
 You can check the tests (model and controller) : 
 
